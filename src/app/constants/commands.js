@@ -2,7 +2,8 @@ const allPrograms = [
   {'ethers': 'The ethers.js library is a compact and complete JavaScript library for Ethereum.'},
   {'remix': 'Ethereum IDE and tools for the web.'},
   {'web3': 'The web3.js library is a collection of modules which contain specific functionality for the ethereum ecosystem.'},
-  {'swarmgw': 'This library can be used to upload/download files to Swarm via https://swarm-gateways.net/.'}
+  {'swarmgw': 'This library can be used to upload/download files to Swarm via https://swarm-gateways.net/.'},
+  {'appStore': 'Represent list of plugin currently loaded.'}
 ]
 
 const allCommands = [
@@ -49,7 +50,10 @@ const allCommands = [
 
   {'web3.eth.clearSubscriptions();': 'Resets subscriptions.'},
   {'web3.eth.Contract(jsonInterface[, address][, options])': 'The web3.eth.Contract object makes it easy to interact with smart contracts on the ethereum blockchain.'},
-  {'web3.eth.accounts.create([entropy]);': 'The web3.eth.accounts contains functions to generate Ethereum accounts and sign transactions and data.'}
+  {'web3.eth.accounts.create([entropy]);': 'The web3.eth.accounts contains functions to generate Ethereum accounts and sign transactions and data.'},
+
+  {'appStore.getActives()': 'Get all the active plugins.'},
+  {'appStore.getOne(<name>)': 'Get a specific plugin.'}
 ]
 
 module.exports = {

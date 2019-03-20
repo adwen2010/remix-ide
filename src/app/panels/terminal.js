@@ -60,12 +60,12 @@ class Terminal {
         self.updateJournal({ type: 'select', value: label })
       }
     })
-    self._components.autoCompletePopup = new AutoCompletePopup()
+    self._components.autoCompletePopup = new AutoCompletePopup(self._opts)
     self._components.autoCompletePopup.event.register('handleSelect', function (input) {
       let textList = self._view.input.innerText.split(' ')
       textList.pop()
       textList.push(input)
-      self._view.input.innerText = `${textList}`.replace(/,/g, ' ')
+      self._view.input.innerText = textList
       self._view.input.focus()
       self.putCursor2End(self._view.input)
     })
@@ -633,7 +633,7 @@ class Terminal {
 
 function domTerminalFeatures (self, scopedCommands) {
   return {
-    compilers: self._opts.compilers,
+    appStore: self._opts.appStore,
     swarmgw,
     ethers,
     remix: self._components.cmdInterpreter,
