@@ -68,17 +68,17 @@ UniversalDAppUI.prototype.renderInstanceFromABI = function (contractABI, address
 
   var shortAddress = helper.shortenAddress(address)
   var title = yo`
-    <div class="${css.title} alert alert-dark">
-      <button class="btn btn-light ${css.titleExpander}" onclick="${(e) => { toggleClass(e) }}"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+    <div class="${css.title} alert alert-primary">
+      <button class="btn btn-primary ${css.titleExpander}" onclick="${(e) => { toggleClass(e) }}"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
       <div class="input-group ${css.nameNbuts}">
         <div class="${css.titleText} input-group-prepend"><span class="input-group-text"> ${contractName} at ${shortAddress} (${context})</span></div>
         <div class="btn-group">
-          <button class="btn btn-secondary">${copyToClipboard(() => address)}</button>
+          <button class="btn btn-primary">${copyToClipboard(() => address)}</button>
         </div>
       </div>
   </div>`
 
-  var close = yo`<button class="${css.udappClose} btn btn-secondary" onclick=${remove}><i class="${css.closeIcon} fa fa-close" aria-hidden="true"></i></button>`
+  var close = yo`<button class="${css.udappClose} btn btn-primary" onclick=${remove}><i class="${css.closeIcon} fa fa-close" aria-hidden="true"></i></button>`
   title.querySelector('.btn-group').appendChild(close)
 
   var contractActionsWrapper = yo`

@@ -130,10 +130,13 @@ var css = csjs`
     /* background-color:var(--info); */
     min-width: 100px;
     width: 100px;
-    font-size: 10px;
+    /* font-size: 10px; */
     margin:0;
     word-break: inherit;
     outline: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .contractProperty input {
     width: 75%
